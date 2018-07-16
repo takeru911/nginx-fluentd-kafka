@@ -12,7 +12,7 @@
 
 ## 構成
 
-```
+```shell
 ~/w/w/kafka_sandbox ››› tree -L 2 ./                                                                    [master]
 ./
 ├ Makefile
@@ -43,7 +43,7 @@ docker-composeなんてなかった
 
   * 各コンテナ起動
 
-```
+```shell
 ~/w/w/kafka_sandbox ››› make run
 ```
 
@@ -54,7 +54,7 @@ nginxはlocalhost:8080で公開されているので、ここにアクセスす�
 
   * topicを読みに行く
   
-```
+```shell
 ~/w/w/kafka_sandbox ››› make fetch-message
 docker run --rm --link zookeeper:zk \
   --link kafka-server:ks kafka_sandbox:kafka \
@@ -72,7 +72,7 @@ test topicに流れているmessageを取得する, from-beginningなので最�
 
   * topicに書き込む
   
-```
+```shell
 ~/w/w/kafka_sandbox ››› make send-message
 docker run -i --rm --link zookeeper:zk \
   --link kafka-server:ks kafka_sandbox:kafka \
